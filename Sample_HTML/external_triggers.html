@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!-- 
+==================================================
+Copyright [2021] [HCL Technologies]
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+==================================================
+-->
+<html>
+
+<head>
+
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="external_triggers.js"></script>
+
+<style>
+
+.tooltip {
+
+  position: relative;
+
+  display: inline-block;
+
+}
+
+
+
+.tooltip .btn {
+
+  visibility: hidden;
+
+  width: 120px;
+
+  height: 60px;
+
+  background-color: #0066AE;
+
+  color: #fff;
+
+  text-align: center;
+
+  border-radius: 6px;
+
+  padding: 5px 0;
+
+  
+
+  /* Position the tooltip */
+
+  position: absolute;
+
+  z-index: 1;
+
+  top: 0%;
+
+  left: 50%;
+
+  margin-left: -60px;
+
+}
+
+
+
+.tooltip:hover .btn {
+
+  visibility: visible;
+
+}
+
+
+
+.tooltip:hover {
+
+visibility: hidden;
+
+}
+
+</style>
+
+</head>
+
+<body style="text-align:center;">
+
+<input type="hidden" id="DM_ReqCmd" name="DM_ReqCmd" value=""/>
+
+<h1>External site with coupons</h1>
+
+<form align="right">
+
+	<label for="emailId"> Email:</label>
+
+	<input type="text" id="emailId" name="emailId" value="demouser@demo.com" size="30px">
+	
+</form>
+
+<h2><p>Congratulations! you have won rewards worth $5000</p></h2><br><br><br>
+
+
+
+<div class="tooltip">Extra Flat $10 OFF on<br>min. spend of $100
+	<script>
+		document.getElementById("DM_ReqCmd").value ="externalCoupon";
+	</script>
+	<button class="btn" type= "submit" onClick = "TriggerEvent()">Claim Now</button>
+
+</div>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+
+
+</body>
+
+</html>
